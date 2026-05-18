@@ -18,15 +18,12 @@ function PlantCard({ plant, onSoldOut }) {
 
       <p>Price: ${price}</p>
 
-      {inStock ? (
-        <button onClick={() => onSoldOut(id)}>
-          In Stock
-        </button>
-      ) : (
-        <button disabled>
-          Sold Out
-        </button>
-      )}
+      <button
+        onClick={() => onSoldOut(id)}
+        disabled={!inStock}
+      >
+        {inStock ? "In Stock" : "Sold Out"}
+      </button>
     </li>
   );
 }

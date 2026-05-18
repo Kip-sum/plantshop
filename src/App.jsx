@@ -7,7 +7,7 @@ import Search from "./components/Search";
 function App() {
   const [plants, setPlants] = useState([]);
   const [search, setSearch] = useState("");
-// test change for PR
+
   // fetch plants
   useEffect(() => {
     fetch("http://localhost:6001/plants")
@@ -45,8 +45,9 @@ function App() {
       <NewPlantForm onAddPlant={handleAddPlant} />
 
       <Search
-        search={search}
-        setSearch={setSearch}
+  searchTerm={search}
+  onSearchChange={setSearch}
+
       />
 
       <PlantList
